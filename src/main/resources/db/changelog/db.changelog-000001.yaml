@@ -1,0 +1,100 @@
+databaseChangeLog:
+    - changeSet:
+          id: 1700863597269-1
+          author: cedric.buehler (generated)
+          changes:
+              - createTable:
+                    columns:
+                        - column:
+                              constraints:
+                                  nullable: false
+                                  primaryKey: true
+                                  primaryKeyName: CONSTRAINT_F
+                              name: ID
+                              type: UUID
+                        - column:
+                              name: ADDED_AT
+                              type: TIMESTAMP
+                        - column:
+                              name: CONTENT
+                              type: VARCHAR(255)
+                        - column:
+                              name: HEADLINE
+                              type: VARCHAR(255)
+                        - column:
+                              name: SLUG
+                              type: VARCHAR(255)
+                        - column:
+                              name: TITLE
+                              type: VARCHAR(255)
+                        - column:
+                              name: AUTHOR_ID
+                              type: UUID
+                    tableName: ARTICLE
+    - changeSet:
+          id: 1700863597269-2
+          author: cedric.buehler (generated)
+          changes:
+              - createTable:
+                    columns:
+                        - column:
+                              constraints:
+                                  nullable: false
+                                  primaryKey: true
+                                  primaryKeyName: CONSTRAINT_8
+                              name: ID
+                              type: UUID
+                        - column:
+                              name: DESCRIPTION
+                              type: VARCHAR(255)
+                        - column:
+                              name: FIRSTNAME
+                              type: VARCHAR(255)
+                        - column:
+                              name: LASTNAME
+                              type: VARCHAR(255)
+                        - column:
+                              name: LOGIN
+                              type: VARCHAR(255)
+                    tableName: MY_USER
+    - changeSet:
+          id: 1700863597269-3
+          author: cedric.buehler (generated)
+          changes:
+              - createTable:
+                    columns:
+                        - column:
+                              constraints:
+                                  nullable: false
+                                  primaryKey: true
+                                  primaryKeyName: CONSTRAINT_2
+                              name: ID
+                              type: UUID
+                    tableName: TEST
+    - changeSet:
+          id: 1700863597269-4
+          author: cedric.buehler (generated)
+          changes:
+              - createIndex:
+                    associatedWith: ''
+                    columns:
+                        - column:
+                              name: AUTHOR_ID
+                    indexName: FK7AIX5DH3VTXLBOO1LA3RMBPQI_INDEX_F
+                    tableName: ARTICLE
+    - changeSet:
+          id: 1700863597269-5
+          author: cedric.buehler (generated)
+          changes:
+              - addForeignKeyConstraint:
+                    baseColumnNames: AUTHOR_ID
+                    baseTableName: ARTICLE
+                    constraintName: FK7AIX5DH3VTXLBOO1LA3RMBPQI
+                    deferrable: false
+                    initiallyDeferred: false
+                    onDelete: RESTRICT
+                    onUpdate: RESTRICT
+                    referencedColumnNames: ID
+                    referencedTableName: MY_USER
+                    validate: true
+

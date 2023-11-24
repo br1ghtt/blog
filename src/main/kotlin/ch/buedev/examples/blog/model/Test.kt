@@ -2,12 +2,11 @@ package ch.buedev.examples.blog.model
 
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
+import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
-import jakarta.persistence.ManyToOne
+import java.util.*
 
 @Entity
-class Book(
-    var title: String,
-    @ManyToOne var author: MyUser,
-    @Id @GeneratedValue var id: Long? = null
+class Test(
+    @Id @GeneratedValue(strategy = GenerationType.UUID) var id: UUID? = null
 )
