@@ -1,6 +1,6 @@
 databaseChangeLog:
     - changeSet:
-          id: 1700863597269-1
+          id: 1700906862842-1
           author: cedric.buehler (generated)
           changes:
               - createTable:
@@ -11,7 +11,7 @@ databaseChangeLog:
                                   primaryKey: true
                                   primaryKeyName: CONSTRAINT_F
                               name: ID
-                              type: UUID
+                              type: VARCHAR(36)
                         - column:
                               name: ADDED_AT
                               type: TIMESTAMP
@@ -29,10 +29,10 @@ databaseChangeLog:
                               type: VARCHAR(255)
                         - column:
                               name: AUTHOR_ID
-                              type: UUID
+                              type: VARCHAR(36)
                     tableName: ARTICLE
     - changeSet:
-          id: 1700863597269-2
+          id: 1700906862842-2
           author: cedric.buehler (generated)
           changes:
               - createTable:
@@ -43,7 +43,7 @@ databaseChangeLog:
                                   primaryKey: true
                                   primaryKeyName: CONSTRAINT_8
                               name: ID
-                              type: UUID
+                              type: VARCHAR(36)
                         - column:
                               name: DESCRIPTION
                               type: VARCHAR(255)
@@ -58,7 +58,7 @@ databaseChangeLog:
                               type: VARCHAR(255)
                     tableName: MY_USER
     - changeSet:
-          id: 1700863597269-3
+          id: 1700906862842-3
           author: cedric.buehler (generated)
           changes:
               - createTable:
@@ -69,10 +69,10 @@ databaseChangeLog:
                                   primaryKey: true
                                   primaryKeyName: CONSTRAINT_2
                               name: ID
-                              type: UUID
+                              type: VARCHAR(36)
                     tableName: TEST
     - changeSet:
-          id: 1700863597269-4
+          id: 1700906862842-4
           author: cedric.buehler (generated)
           changes:
               - createIndex:
@@ -83,7 +83,7 @@ databaseChangeLog:
                     indexName: FK7AIX5DH3VTXLBOO1LA3RMBPQI_INDEX_F
                     tableName: ARTICLE
     - changeSet:
-          id: 1700863597269-5
+          id: 1700906862842-5
           author: cedric.buehler (generated)
           changes:
               - addForeignKeyConstraint:
