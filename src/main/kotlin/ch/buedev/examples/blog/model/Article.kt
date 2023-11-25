@@ -2,6 +2,8 @@ package ch.buedev.examples.blog.model
 
 import ch.buedev.examples.blog.extensions.toSlug
 import jakarta.persistence.*
+import org.hibernate.annotations.JdbcTypeCode
+import org.hibernate.type.SqlTypes
 import java.time.LocalDateTime
 import java.util.*
 
@@ -13,5 +15,5 @@ class Article(
     @ManyToOne var author: MyUser,
     var slug: String = title.toSlug(),
     var addedAt: LocalDateTime = LocalDateTime.now(),
-    @Id @GeneratedValue(strategy = GenerationType.UUID) var id: UUID? = null
+    @Id @GeneratedValue(strategy = GenerationType.UUID) @JdbcTypeCode(SqlTypes.VARCHAR) var id: UUID? = null
 )
